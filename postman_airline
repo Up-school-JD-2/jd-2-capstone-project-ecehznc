@@ -1,0 +1,616 @@
+{
+	"info": {
+		"_postman_id": "820d781e-b662-416c-9cb4-c24c496fc5ac",
+		"name": "airline app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28958067"
+	},
+	"item": [
+		{
+			"name": "get all airports",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/airports",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"airports"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all airports",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/airports",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"airports"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"ESENBOGA\",\n        \"code\": \"ESB\",\n        \"active\": null\n    },\n    {\n        \"id\": 2,\n        \"name\": \"ISTANBUL\",\n        \"code\": \"IST\",\n        \"active\": null\n    },\n    {\n        \"id\": 3,\n        \"name\": \"ANTALYA\",\n        \"code\": \"AYT\",\n        \"active\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "save airports",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"3\",\r\n    \"name\" : \"ANTALYA\",\r\n    \"code\" : \"AYT\",\r\n    \"active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/airports",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"airports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update airports",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n        \"name\": \"ISTANBUL\",\r\n        \"code\": \"IST\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/airports",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"airports"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update airports",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n        \"name\": \"ISTANBUL\",\r\n        \"code\": \"IST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/airports",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"airports"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"nameCode\": \"ISTANBUL IST\"\n}"
+				}
+			]
+		},
+		{
+			"name": "save airline",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "client-type",
+						"value": "myairline",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"name\": \"pegasus\",\r\n    \"airport\": {\r\n        \"name\": \"ESENBOGA\",\r\n        \"code\": \"ESB\",\r\n        \"id\":\"1\"\r\n        \r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/airlines",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"airlines"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "save airline",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client-type",
+								"value": "myairline",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"name\": \"pegasus\",\r\n    \"airport\": {\r\n        \"name\": \"ESENBOGA\",\r\n        \"code\": \"ESB\",\r\n        \"id\":\"1\"\r\n        \r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/airlines",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"airlines"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"pegasus\",\n    \"airport\": {\n        \"id\": 1,\n        \"name\": \"ESENBOGA\",\n        \"code\": \"ESB\",\n        \"active\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get all airlines",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/airline",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"airline"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all airlines",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/airline",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"airline"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"pegasus\",\n        \"airport\": {\n            \"id\": 1,\n            \"name\": \"ESENBOGA\",\n            \"code\": \"ESB\",\n            \"active\": null\n        }\n    },\n    {\n        \"id\": 2,\n        \"name\": \"pegasus\",\n        \"airport\": {\n            \"id\": 2,\n            \"name\": \"ISTANBUL\",\n            \"code\": \"IST\",\n            \"active\": null\n        }\n    },\n    {\n        \"id\": 3,\n        \"name\": \"pegasus\",\n        \"airport\": {\n            \"id\": 3,\n            \"name\": \"ANTALYA\",\n            \"code\": \"AYT\",\n            \"active\": null\n        }\n    },\n    {\n        \"id\": 4,\n        \"name\": \"türk hava yolları\",\n        \"airport\": {\n            \"id\": 1,\n            \"name\": \"ESENBOGA\",\n            \"code\": \"ESB\",\n            \"active\": null\n        }\n    },\n    {\n        \"id\": 5,\n        \"name\": \"türk hava yolları\",\n        \"airport\": {\n            \"id\": 2,\n            \"name\": \"ISTANBUL\",\n            \"code\": \"IST\",\n            \"active\": null\n        }\n    },\n    {\n        \"id\": 6,\n        \"name\": \"türk hava yolları\",\n        \"airport\": {\n            \"id\": 3,\n            \"name\": \"ANTALYA\",\n            \"code\": \"AYT\",\n            \"active\": null\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get all routes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/route",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"route"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all routes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/route",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"route"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"sourceAirportCode\": \"ESB\",\n        \"destinationAirportCode\": \"IST\"\n    },\n    {\n        \"id\": 2,\n        \"sourceAirportCode\": \"IST\",\n        \"destinationAirportCode\": \"ESB\"\n    },\n    {\n        \"id\": 3,\n        \"sourceAirportCode\": \"ESB\",\n        \"destinationAirportCode\": \"AYT\"\n    },\n    {\n        \"id\": 4,\n        \"sourceAirportCode\": \"AYT\",\n        \"destinationAirportCode\": \"ESB\"\n    },\n    {\n        \"id\": 5,\n        \"sourceAirportCode\": \"IST\",\n        \"destinationAirportCode\": \"AYT\"\n    },\n    {\n        \"id\": 6,\n        \"sourceAirportCode\": \"AYT\",\n        \"destinationAirportCode\": \"IST\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "save route",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":6,\r\n    \"sourceAirportCode\":\"AYT\",\r\n    \"destinationAirportCode\":\"IST\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/route",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"route"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "save route",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":6,\r\n    \"sourceAirportCode\":\"AYT\",\r\n    \"destinationAirportCode\":\"IST\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/route",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"route"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n        \"id\": 1,\r\n        \"sourceAirportCode\": \"ESB\",\r\n        \"destinationAirportCode\": \"IST\"\r\n    }"
+				}
+			]
+		},
+		{
+			"name": "get all flights",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/flight",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"flight"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all flights",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/flight",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"flight"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"airline\": {\n            \"id\": 1,\n            \"name\": \"pegasus\",\n            \"airport\": {\n                \"id\": 1,\n                \"name\": \"ESENBOGA\",\n                \"code\": \"ESB\",\n                \"active\": null\n            }\n        },\n        \"route\": {\n            \"id\": 1,\n            \"sourceAirportCode\": \"ESB\",\n            \"destinationAirportCode\": \"IST\"\n        },\n        \"departureTime\": [\n            2023,\n            1,\n            1,\n            10,\n            0\n        ],\n        \"arrivalTime\": [\n            2023,\n            1,\n            2,\n            12,\n            0\n        ],\n        \"passengers\": [],\n        \"tickets\": []\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "save flight",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/flight",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"flight"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "save flight",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/flight",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"flight"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"id\": 1,\r\n        \"airline\": {\r\n            \"id\": 1,\r\n            \"name\": \"pegasus\",\r\n            \"airport\": {\r\n                \"id\": 1,\r\n                \"name\": \"ESENBOGA\",\r\n                \"code\": \"ESB\",\r\n                \"active\": null\r\n            }\r\n        },\r\n        \"route\": {\r\n            \"id\": 1,\r\n            \"sourceAirportCode\": \"ESB\",\r\n            \"destinationAirportCode\": \"IST\"\r\n        },\r\n        \"departureTime\": [\r\n            2023,\r\n            1,\r\n            1,\r\n            10,\r\n            0\r\n        ],\r\n        \"arrivalTime\": [\r\n            2023,\r\n            1,\r\n            2,\r\n            12,\r\n            0\r\n        ],\r\n        \"passengers\": [],\r\n        \"tickets\": []\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "get all passengers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/passengers",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"passengers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save passenger",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/passengers",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"passengers"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "save passenger",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/passengers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"passengers"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"firstName\": \"ece\",\n    \"lastName\": \"hazneci\",\n    \"email\": \"ece@gmail.com\",\n    \"phoneNumber\": \"00535428\",\n    \"flight\": {\n        \"id\": 1,\n        \"airline\": {\n            \"id\": 1,\n            \"name\": \"pegasus\",\n            \"airport\": {\n                \"id\": 1,\n                \"name\": \"ESENBOGA\",\n                \"code\": \"ESB\",\n                \"active\": null\n            }\n        },\n        \"route\": {\n            \"id\": 1,\n            \"sourceAirportCode\": \"ESB\",\n            \"destinationAirportCode\": \"IST\"\n        },\n        \"departureTime\": [\n            2023,\n            1,\n            1,\n            10,\n            0\n        ],\n        \"arrivalTime\": [\n            2023,\n            1,\n            2,\n            12,\n            0\n        ],\n        \"passengers\": [],\n        \"tickets\": []\n    }\n}"
+				}
+			]
+		}
+	]
+}
